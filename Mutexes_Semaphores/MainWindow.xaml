@@ -1,12 +1,48 @@
-﻿<Window x:Class="Mutexes_Semaphores.MainWindow"
+﻿<Window x:Class="MultiTaskApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Mutexes_Semaphores"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MultiTaskApp" Height="600" Width="800">
     <Grid>
+        <TabControl>
+            <!-- Task 1: Mutex - Display numbers from 0 to 20 and then from 10 to 0 -->
+            <TabItem Header="Task 1">
+                <StackPanel>
+                    <Button Content="Start Task 1" Click="StartTask1_Click"/>
+                    <TextBox x:Name="OutputTask1TextBox" TextWrapping="Wrap" Height="400"/>
+                </StackPanel>
+            </TabItem>
 
+            <!-- Task 2: Mutex - Modify array and find max value -->
+            <TabItem Header="Task 2">
+                <StackPanel>
+                    <Button Content="Start Task 2" Click="StartTask2_Click"/>
+                    <TextBox x:Name="OutputTask2TextBox" TextWrapping="Wrap" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Task 3: Mutex - Modify array and find max value (display in Main) -->
+            <TabItem Header="Task 3">
+                <StackPanel>
+                    <Button Content="Start Task 3" Click="StartTask3_Click"/>
+                    <TextBox x:Name="OutputTask3TextBox" TextWrapping="Wrap" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Task 4: Single Instance Application -->
+            <TabItem Header="Task 4">
+                <StackPanel>
+                    <Button Content="Check Single Instance" Click="StartTask4_Click"/>
+                    <TextBox x:Name="OutputTask4TextBox" TextWrapping="Wrap" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Task 5: Semaphore - Display random numbers with limited concurrent threads -->
+            <TabItem Header="Task 5">
+                <StackPanel>
+                    <Button Content="Start Task 5" Click="StartTask5_Click"/>
+                    <TextBox x:Name="OutputTask5TextBox" TextWrapping="Wrap" Height="400"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
